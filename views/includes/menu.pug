@@ -1,0 +1,5 @@
+.list-group.my-3
+            if categories.length >0
+                each category in categories 
+                      a( href=`/categories/${category._id}` class=category._id == activeCategory ?"list-group-item active":"list-group-item").list-group-item  #{category.name}
+            

@@ -1,0 +1,31 @@
+extends ../layouts/main-layout.pug
+block head 
+    
+block content 
+        if(action !== 'undefined' && action === 'create')
+            .alert.alert-success  The Category Has been created
+        if(action !== 'undefined' && action === 'edit')
+            .alert.alert-success  The Category Has been updated
+        if(action !== 'undefined' && action === 'delete')
+            .alert.alert-danger   The Category Has been deleted
+        .row 
+            if categories.length  > 0  
+                table.table.table-bordered
+                    thead 
+                        tr
+                                th Category Name 
+                                th Describtion
+                                th(style="width:133px") 
+                    tbody 
+                        each category in categories
+                            tr 
+                                td #{category.name}
+                                td #{category.desc}
+                                td 
+                                    a.btn.btn-primary.btn-sm.mr-2(href=`categories/${category._id}`) Edit
+                                    form(action="/admin/delete-category", method="post") 
+                                        input(type="hidden", name="_csrf" value=`${csrfToken}`)
+                                        input(type="hidden", name="categoryid" value=`${category._id}`)
+                                        button(type="submit").btn.btn-danger.btn-sm Delete
+            else
+                h1 NO category

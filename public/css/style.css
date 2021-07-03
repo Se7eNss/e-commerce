@@ -1,0 +1,12 @@
+.pt-100{
+    padding-top: 100px;
+}
+a{
+    text-decoration: none;
+}
+form{
+    display: inline;
+}
+.btn-link{
+    text-decoration: none;
+}

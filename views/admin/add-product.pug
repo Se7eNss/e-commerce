@@ -1,0 +1,33 @@
+extends ../layouts/main-layout.pug
+block content 
+                    if errorMessage
+                        div.alert.alert-danger.col-sm-7 !{errorMessage}
+
+                    form( method="POST" action="/admin/add-product")
+                        input(type="hidden", name="_csrf" value=`${csrfToken}`)
+                        .form-group.row.my-3
+                            label( for="name").col-sm-2.col-form-label Product Name
+                            .col-sm-10  
+                                input.form-control#name(type="text" name="name" value=`${inputs.name}`)
+                        .form-group.row.my-3
+                            label( for="price").col-sm-2.col-form-label Price 
+                            .col-sm-10  
+                              input.form-control#price(type="text" name="price" value=`${inputs.price}`)
+                        //- .form-group.row.my-3
+                        //-     label( for="categoryid").col-sm-2.col-form-label Category
+                        //-     .col-sm-10  
+                        //-         each category in categories 
+                        //-           input( type="checkbox" name="categoryids" value=`${category._id}` checked=category.selected)
+                        //-           | #{category.name}
+                        //-           br
+                        .form-group.row.my-3
+                            label( for="desc").col-sm-2.col-form-label Describtion
+                            .col-sm-10  
+                               textarea.form-control(name="description" cols="30" rows="10") #{inputs.desc}
+                        .form-group.row.my-3
+                            label( for="imageurl").col-sm-2.col-form-label Image
+                            .col-sm-10  
+                              input( type="text" name="imageurl").form-control#imageurl
+                        .form-group.row.my-3
+                          .col-sm-10.offset-sm-2
+                            input( type="submit" value="Save Product").btn.btn-primary

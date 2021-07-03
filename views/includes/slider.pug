@@ -1,0 +1,18 @@
+#carouselExampleIndicators.carousel.slide(data-bs-ride="carousel")
+
+                        .carousel-indicators
+                             button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0").active
+                             button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1")
+                             button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2")
+
+                        .carousel-inner 
+                                .carousel-item.active
+                                    img( src="/img/sse.png" ).d-block.w-100
+                                .carousel-item.active
+                                    img( src="/img/p2.png" ).d-block.w-100
+                                .carousel-item.active
+                                    img( src="/img/sse.png" ).d-block.w-100
+                                    button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev").carousel-control-prev 
+                                        span.carousel-control-prev-icon
+                                    button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next").carousel-control-next
+                                        span.carousel-control-next-icon

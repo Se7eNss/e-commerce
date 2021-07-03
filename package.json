@@ -1,0 +1,31 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongodb": "^3.6.9",
+    "mongoose": "^5.12.15",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.6.2",
+    "pug": "^3.0.2",
+    "sequelize": "^6.6.2",
+    "sib-api-v3-sdk": "^8.2.0"
+  }
+}

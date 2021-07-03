@@ -1,0 +1,21 @@
+extends ../layouts/main-layout.pug
+    
+block content 
+        .row        
+            .col-md-3 
+                img(src=`/img/${product.imageurl}`, alt=`${product.desc}`)
+                .img-fluid 
+            .col-md-9
+                h1.mb-3 #{product.name} 
+                hr
+                a(href="").btn.btn-link.p-0.mb-3  #{product.category}
+                .mb-3
+                    h4.text-primary.mb-3 #{product.price}TL
+                    form(action="/cart", method="post")
+                        input(type="hidden", name="_csrf" value=`${csrfToken}`)
+                        input(type="hidden", name="productId" value=`${product._id}`) 
+                        button(type="submit").btn.btn-outline-secondary.btn-sm.ml-3 Add to Cart
+        .row 
+            .col-md-12 
+                hr
+                p.p-3 #{product.desc} 

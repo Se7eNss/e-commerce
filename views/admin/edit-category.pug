@@ -1,0 +1,17 @@
+extends ../layouts/main-layout.pug
+block content 
+                    form( method="POST" action="/admin/categories")
+                        input(type="hidden", name="_csrf" value=`${csrfToken}`)
+                        input(type="hidden" name="id" value=`${category._id}`)
+                          
+                        .form-group.row.my-3
+                            label( for="name").col-sm-2.col-form-label Category Name
+                            .col-sm-10  
+                              input( type="text" name="name" value=`${category.name}`).form-control#name 
+                        .form-group.row.my-3
+                            label( for="desc").col-sm-2.col-form-label Describtion
+                            .col-sm-10  
+                              textarea(name="desc", cols="30", rows="10").form-control#desc #{category.desc}
+                        .form-group.row.my-3
+                          .col-sm-10.offset-sm-2
+                            input( type="submit" value="Save Category").btn.btn-primary
